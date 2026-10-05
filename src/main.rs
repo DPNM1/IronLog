@@ -126,43 +126,6 @@ fn main() {
         }
     }
 }
-/*   if cmd.is_empty() {
-    println!("ENTER A COMMAND");
-    continue;
-} else {
-    let args: Vec<String> = cmd.split_whitespace().map(String::from).collect();
-    match args[0].as_str() {
-        "SET" => set_val(&mut store, &args[1], &args[2]),
-        "GET" => {
-            let res = get_val(&store, &args[1]);
-            match res {
-                Ok(val) => {
-                    println!("{}", val);
-                }
-                Err(Check::NoVals) => {
-                    println!("ironlog is empty");
-                }
-            }
-        }
-        "DEL" => {
-            let ans = del_val(&mut store, &args[1]);
-            match ans {
-                Ok(s) => {
-                    println!("{}", s);
-                }
-                Err(Check::NoVals) => {
-                    println!("No Data to delete in Ironlog");
-                }
-            }
-        }
-        "exit" => {
-            break;
-        }
-        _ => {
-            println!("Not a valid command");
-        }
-    }
-} */
 #[cfg(test)]
 mod tests {
     use super::*;
