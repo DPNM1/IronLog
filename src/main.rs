@@ -100,10 +100,12 @@ fn main() {
         io::stdout().flush().unwrap();
 
         let mut cmd = String::new();
-        io::stdin()
+        let byte_read = io::stdin()
             .read_line(&mut cmd)
             .expect("Failed to take input");
-
+        if byte_read == 0 {
+            break;
+        }
         match parse(&cmd) {
             Ok(Commands::SET(k, v)) => {
                 let status = set_val(&mut store, &k, &v);
